@@ -1,0 +1,19 @@
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - langchain=0.1.0
+  - openai=1.7.2
+  - python=3.10.13
+  - pip:
+      - '--extra-index-url https://test.pypi.org/simple/'
+      - okahu-handlers==0.0.2
+      - langchainhub==0.1.14
+      - types-requests==2.31.0.20240106
+      - azureml-mlflow==1.54.0
+      - azureml-inference-server-http==1.0.0
+      - sentence-transformers==2.2.2
+      - faiss-cpu==1.7.4
+      - faiss-gpu==1.7.2
+name: okahu-demo-rag

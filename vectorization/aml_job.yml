@@ -1,0 +1,27 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+code: ./
+command: >-
+  python vectorization.py ${{inputs.input_data}} ${{outputs.output_data}}
+environment: azureml:amlraylangchain@latest
+inputs:
+  input_data:
+    mode: ro_mount
+    path: azureml://datastores/workspaceblobstore/paths/__input_folder__
+    type: uri_folder
+outputs:
+  output_data:
+    mode: rw_mount
+    path: azureml://datastores/workspaceblobstore/paths/__output_folder__
+    type: uri_folder
+compute: raycluster1
+resources:
+  instance_count: 2 
+  shm_size: 48g
+distribution: 
+  type: mpi
+display_name: coffee_job
+experiment_name: ray_lanchain_on_aml
+description: ray_lanchain_on_aml
+
+# To create the job from azure cli https://learn.microsoft.com/en-us/cli/azure/ml/job?view=azure-cli-latest
+# az ml job create --file aml_job.yml --resource-group my-resourcegroup  --workspace-name my-workspace

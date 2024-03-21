@@ -1,0 +1,10 @@
+flask
+langchain
+langchain-openai
+langchain-community
+faiss-cpu
+langchainhub
+openai
+credential_utilties/
+embeddings/
+okahu-handlers

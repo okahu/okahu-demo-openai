@@ -1,0 +1,11 @@
+$schema: https://azuremlschemas.azureedge.net/latest/amlCompute.schema.json 
+name: raycluster1
+type: amlcompute
+size: Standard_E4ds_v4
+min_instances: 1
+max_instances: 2
+idle_time_before_scale_down: 300
+location: eastus
+
+# Refer https://learn.microsoft.com/en-in/azure/machine-learning/reference-yaml-compute-aml?view=azureml-api-2
+# az ml compute create --file aml_compute.yml --resource-group my-resource-group --workspace-name my-workspace

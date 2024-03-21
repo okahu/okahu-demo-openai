@@ -1,0 +1,7 @@
+[CREDENTIALS]
+OKAHU_API_KEY=
+OPENAI_API_KEY=
+OKAHU_INGESTION_ENDPOINT=https://ingest.okahu.ai:443/api/v1/trace/ingest
+
+[DATA]
+AZUREML_MODEL_DIR=data

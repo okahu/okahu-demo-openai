@@ -1,0 +1,12 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+name: coffee-rag-7
+endpoint_name: okahu-demo-dev-openai
+code_configuration:
+  code: ../
+  scoring_script: rag_openai_service/coffee_rag_openai.py
+environment: azureml:rag-okahu-demo-env-2@latest
+model: azureml:coffeemodel@latest
+instance_type: Standard_E2s_v3 
+instance_count: 1
+environment_variables:
+  PYTHONPATH: /var/azureml-app/okahu-demo/
