@@ -11,11 +11,16 @@ To try this chatbot
 You'll need 
 - An OpenAI subscription and an API key to [OpenAI developer platform](https://platform.openai.com/overview)
 - An Okahu tenant and API key to [Okahu AI Observability Cloud](https://www.okahu.ai)
-     - Validate your Okahu API key ```curl --silent --location 'api.okahu.ai/api/v1/tenant' --header "x-api-key: ${OKAHU_API_KEY}" | jq .```
+  
 
 ## Configure the demo environment
 - Copy the file config/config.ini.template to config/config.ini
 - Edit the config/config.ini file to add the OpenAI API Key and Okahu API key and save
+
+#### Validate the configuration
+- Validate OpenAI with command ```./coffee_app_openai.sh``` 
+- Validate your Okahu API key ```curl --silent --location 'api.okahu.ai/api/v1/tenant' --header "x-api-key: ${OKAHU_API_KEY}" | jq .```
+    - Setup OKAHU_API_KEY as an environment variable
 
 ## Run the interactive chatbot 
 This application is an interactive chatbot that answers questions about coffee and built with a RAG design pattern.
