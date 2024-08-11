@@ -1,3 +1,4 @@
+--extra-index-url https://okahu.jfrog.io/artifactory/api/pypi/okahu-pypi/simple
 flask
 langchain
 langchain-openai
@@ -7,4 +8,4 @@ langchainhub
 openai
 credential_utilties/
 embeddings/
-okahu-handlers
+okahu-observability
