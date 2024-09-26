@@ -2,6 +2,7 @@
 This repo includes a demo chat application built using OpenAI & Langchain that is pre-instrumented for observation with Okahu AI Observability cloud. 
 You can fork this repo and run the app in Github Codespaces to get started quickly. 
 
+![Cahtbot demo with Okahu](images/okahu-personal-proprietary.png)
 
 ## Try Okahu with this OpenAI app
 
