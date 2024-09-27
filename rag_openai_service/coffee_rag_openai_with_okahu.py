@@ -4,19 +4,17 @@ from langchain.schema import StrOutputParser
 from langchain_openai import ChatOpenAI
 from langchain_community.vectorstores import faiss
 from langchain_core.runnables import RunnablePassthrough
-from credential_utilties.environment import setEnvironmentVariables
 from embeddings.embeddings_wrapper import HuggingFaceEmbeddings
-from okahu_handlers.langchain.callback import OkahuCallbackHandler
-
+from okahu_apptrace.instrumentor import setup_okahu_telemetry
 
 vectorstore = None
 prompt = None
 
 def init():
-    setEnvironmentVariables()
     global vectorstore
     global prompt
 
+    setup_okahu_telemetry(workflow_name = "langchain_openai_wf")
     embeddings = HuggingFaceEmbeddings(model_id = "multi-qa-mpnet-base-dot-v1")
     model_path = os.path.join(os.getenv("AZUREML_MODEL_DIR", default=""),"coffee_embeddings")
     vectorstore = faiss.FAISS.load_local(model_path, embeddings, allow_dangerous_deserialization=True)
@@ -37,8 +35,7 @@ def run(query):
         | StrOutputParser()
     )
 
-    handler = OkahuCallbackHandler(app_name="langchain_openai_wf")
-    ragtext = rag_chain.invoke(query, config={"callbacks":[handler]})
+    ragtext = rag_chain.invoke(query)
     return [ragtext]
     
 

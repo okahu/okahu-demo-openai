@@ -1,10 +1,11 @@
 import os
+import logging
+logging.getLogger().setLevel(logging.ERROR)
 from langchain import hub
 from langchain.schema import StrOutputParser
 from langchain_openai import ChatOpenAI
 from langchain_community.vectorstores import faiss
 from langchain_core.runnables import RunnablePassthrough
-from credential_utilties.environment import setEnvironmentVariables
 from embeddings.embeddings_wrapper import HuggingFaceEmbeddings
 
 
@@ -12,7 +13,6 @@ vectorstore = None
 prompt = None
 
 def init():
-    setEnvironmentVariables()
     global vectorstore
     global prompt
 

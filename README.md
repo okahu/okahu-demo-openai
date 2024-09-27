@@ -14,8 +14,8 @@ You'll need
 - An Okahu tenant and API key to [Okahu AI Observability Cloud](https://www.okahu.ai)  
 
 ## Configure the demo environment
-- Copy the file config/config.ini.template to config/config.ini
-- Edit the config/config.ini file to add the OpenAI API Key and Okahu API key and save
+- Copy the file botenv.sh.template to botenv.sh
+- Edit the botenv.sh file to add the OpenAI API Key and Okahu API key and save
 
 ## Run the interactive chatbot 
 This application is an interactive chatbot that answers questions about coffee and built with a RAG design pattern.
@@ -31,11 +31,11 @@ To try Okahu from the Github Codespace
    
 2. View the workflow discovered by Okahu AI Observability Cloud with following commands with your Okahu API key
     - Discover all components
-      ```curl --location --request PUT 'https://api.okahu.ai/api/v1/discovery' --header 'x-api-key: <YOUR_OKAHU_API_KEY>;' ```
+      ```curl --location --request PUT 'https://api.okahu.co/api/v1/discovery' --header 'x-api-key: <YOUR_OKAHU_API_KEY>;' ```
     - Get discovered components
-      ```curl --location 'https://api.okahu.ai/api/v1/components' --header 'x-api-key: <YOUR_OKAHU_API_KEY>;' ```
+      ```curl --location 'https://api.okahu.co/api/v1/components' --header 'x-api-key: <YOUR_OKAHU_API_KEY>;' ```
 
-    Check out Okahu AI Observability Cloud API docs [here](https://apidocs.okahu.ai)
+    Check out Okahu AI Observability Cloud API docs [here](https://docs.okahu.ai)
 
 ### Example output 
 

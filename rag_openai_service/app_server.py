@@ -1,5 +1,7 @@
 import sys
 import os
+import logging
+logging.getLogger().setLevel(logging.ERROR)
 from flask import Flask, request, jsonify
 import coffee_rag_openai
 from credential_utilties.environment import setOpenaiEnvironmentVariablesFromConfig
